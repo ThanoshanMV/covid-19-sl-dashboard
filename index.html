@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>COVID-19 Outbreak SL</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <main id="main">
+      <header id="page-header">
+        <h1 id="title">COVID-19 Outbreak Report</h1>
+      </header>
+      <section id="sl-report">
+        <h2>Sri Lanka</h2>
+        <section id="sl-report-details">
+          <div class="sl-pa row">
+            <div class="column">Confirmed patients</div>
+            <div id="local_total_cases" class="sl-pa-results column"></div>
+          </div>
+          <div class="sl-pa row">
+            <div class="column">New patients</div>
+            <div id="local_new_cases" class="sl-pa-results column"></div>
+          </div>
+          <div class="sl-pa row">
+            <div class="column">Active patients</div>
+            <div id="local_active_cases" class="sl-pa-results column"></div>
+          </div>
+          <div class="sl-pa row">
+            <div class="column">Recovered patients</div>
+            <div id="local_recovered" class="sl-pa-results column"></div>
+          </div>
+          <div class="sl-pa row">
+            <div class="column">Confirmed deaths</div>
+            <div id="local_deaths" class="sl-pa-results column"></div>
+          </div>
+        </section>
+        <section id="sl-report-table">
+          <h3>
+            In-depth details
+          </h3>
+          <div id="hospital-data" style="overflow-x:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th style="text-align:center">
+                    Hospital
+                  </th>
+                  <th>Sri Lankans</th>
+                  <th>Foreigners</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="table-body"></tbody>
+              <tfoot>
+                <tr>
+                  <td
+                    id="table-last-updated"
+                    style="text-align:center"
+                    colspan="4"
+                  ></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+      </section>
+      <footer id="footer">
+        &copy; ThanoshanMV, 2019
+      </footer>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>
