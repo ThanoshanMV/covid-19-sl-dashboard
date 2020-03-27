@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>COVID-19 Outbreak SL</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <script
+  type='text/javascript'
+  src='https://www.gstatic.com/charts/loader.js'
+></script>
   </head>
   <body>
     <main id="main">
@@ -13,27 +17,43 @@
         <h1 id="title">COVID-19 Outbreak Report</h1>
       </header>
       <section id="sl-report">
-        <h2>Sri Lanka</h2>
+        <h2>Sri Lanka stats</h2>
         <section id="sl-report-details">
           <div class="sl-pa row">
-            <div class="column">Confirmed patients</div>
-            <div id="local_total_cases" class="sl-pa-results column"></div>
+            <div class="column left">Confirmed patients</div>
+            <div
+              id="local_total_cases"
+              class="sl-pa-results column right"
+            ></div>
           </div>
           <div class="sl-pa row">
-            <div class="column">New patients</div>
-            <div id="local_new_cases" class="sl-pa-results column"></div>
+            <div class="column left">New patients</div>
+            <div id="local_new_cases" class="sl-pa-results column right"></div>
           </div>
           <div class="sl-pa row">
-            <div class="column">Active patients</div>
-            <div id="local_active_cases" class="sl-pa-results column"></div>
+            <div class="column left">Active patients</div>
+            <div
+              id="local_active_cases"
+              class="sl-pa-results column right"
+            ></div>
           </div>
           <div class="sl-pa row">
-            <div class="column">Recovered patients</div>
-            <div id="local_recovered" class="sl-pa-results column"></div>
+            <div class="column left">Recovered patients</div>
+            <div id="local_recovered" class="sl-pa-results column right"></div>
           </div>
           <div class="sl-pa row">
-            <div class="column">Confirmed deaths</div>
-            <div id="local_deaths" class="sl-pa-results column"></div>
+            <div class="column left">Confirmed deaths</div>
+            <div id="local_deaths" class="sl-pa-results column right"></div>
+          </div>
+          <div class="sl-pa row">
+            <div class="column left">
+              Total suspected or confirmed COVID-19 cases currently hospitalized
+              in Sri Lanka
+            </div>
+            <div
+              id="local_total_number_of_individuals_in_hospitals"
+              class="sl-pa-results column right"
+            ></div>
           </div>
         </section>
         <section id="sl-report-table">
@@ -66,10 +86,49 @@
           </div>
         </section>
       </section>
+      <section id="global-report">
+        <h2>Global stats</h2>
+        <section id="global-report-details">
+          <div class="global-pa row">
+            <div class="column left">Confirmed patients</div>
+            <div
+              id="global_total_cases"
+              class="global-pa-results column right"
+            ></div>
+          </div>
+          <div class="global-pa row">
+            <div class="column left">Active patients</div>
+            <div
+              id="global_active_cases"
+              class="global-pa-results column right"
+            ></div>
+          </div>
+          <div class="global-pa row">
+            <div class="column left">Recovered patients</div>
+            <div
+              id="global_recovered"
+              class="global-pa-results column right"
+            ></div>
+          </div>
+          <div class="global-pa row">
+            <div class="column left">Confirmed deaths</div>
+            <div
+              id="global_deaths"
+              class="global-pa-results column right"
+            ></div>
+          </div>
+        </section>
+      </section>
+      <section id="charts">
+        <h2>Sri Lanka and Global pie charts</h2>
+        <div id="charts-pie-sl"></div>
+        <div id="charts-pie-global"></div>
+      </section>
       <footer id="footer">
-        &copy; ThanoshanMV, 2019
+        Made with &#10084;&#65039; by &copy;ThanoshanMV
       </footer>
     </main>
   </body>
   <script src="script.js"></script>
+  </script>
 </html>
