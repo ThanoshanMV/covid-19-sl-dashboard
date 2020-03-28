@@ -1,12 +1,12 @@
 /**
  * Initiating variables related to Sri Lanka
  */
-let localNewCases,
-  localTotalCases,
+let localTotalCases,
   localActiveCases,
   localDeaths,
   localRecovered,
-  localTotalNumberOfIndividualsInHospitals;
+  localTotalNumberOfIndividualsInHospitals,
+  lastUpdate;
 
 /**
  * Initiating variables related to Globe
@@ -27,23 +27,25 @@ fetch('https://hpb.health.gov.lk/api/get-current-statistical')
     /*document.getElementById('update_date_time').innerHTML =
       sldata.update_date_time;*/
 
+    localTotalCases = apiData.local_total_cases;
     localActiveCases = apiData.local_active_cases;
     localRecovered = apiData.local_recovered;
     localDeaths = apiData.local_deaths;
+    lastUpdate = apiData.update_date_time;
 
     document.getElementById('local_new_cases').innerHTML =
       apiData.local_new_cases;
 
-    document.getElementById('local_total_cases').innerHTML =
-      apiData.local_total_cases;
+    document.getElementById('lastUpdate').innerHTML =
+      'Last updated on ' + lastUpdate;
 
-    document.getElementById('local_active_cases').innerHTML =
-      apiData.local_active_cases;
+    document.getElementById('local_total_cases').innerHTML = localTotalCases;
 
-    document.getElementById('local_deaths').innerHTML = apiData.local_deaths;
+    document.getElementById('local_active_cases').innerHTML = localActiveCases;
 
-    document.getElementById('local_recovered').innerHTML =
-      apiData.local_recovered;
+    document.getElementById('local_deaths').innerHTML = localDeaths;
+
+    document.getElementById('local_recovered').innerHTML = localRecovered;
 
     document.getElementById(
       'local_total_number_of_individuals_in_hospitals'
@@ -59,8 +61,8 @@ fetch('https://hpb.health.gov.lk/api/get-current-statistical')
                </tr>`;
     });
     document.getElementById('table-body').innerHTML = tableRows;
-    document.getElementById('table-last-updated').innerHTML =
-      '(Table last updated: ' + apiData.update_date_time + ')';
+    /*document.getElementById('table-last-updated').innerHTML =
+      '(Table last updated: ' + lastUpdate + ')';*/
 
     /* document.getElementById('local_progress').max =
       sldata.local_total_cases - sldata.local_deaths;
@@ -94,27 +96,34 @@ fetch('https://hpb.health.gov.lk/api/get-current-statistical')
  * Sri Lanka and Global Pie charts
  */
 // Load google charts
-
 google.charts.load('current', { packages: ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 
 // Draw the chart and set the chart values
 function drawChart() {
   const dataSL = google.visualization.arrayToDataTable([
-    ['Patients', 'Count'],
+    ['Category', 'Count'],
+    ['Total', localTotalCases],
     ['Active', localActiveCases],
     ['Deaths', localDeaths],
     ['Recovered', localRecovered]
   ]);
   const dataGlobal = google.visualization.arrayToDataTable([
-    ['Patients', 'Count'],
+    ['Category', 'Count'],
+    ['Total', globalTotalCases],
     ['Active', globalActiveCases],
     ['Deaths', globalDeaths],
     ['Recovered', globalRecovered]
   ]);
   // Optional; add a title and set the width and height of the chart
-  let optionsSL = { title: 'Sri Lanka', width: 550, height: 400 };
-  let optionsGlobal = { title: 'Global', width: 550, height: 400 };
+  let optionsSL = {
+    title: '% of COVID-19 persons affected in Sri Lanka level',
+    height: 400
+  };
+  let optionsGlobal = {
+    title: '% of COVID-19 persons affected in global level',
+    height: 400
+  };
 
   // Display the chart inside the <div> element with id="piechart"
   let chartSL = new google.visualization.PieChart(

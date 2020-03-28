@@ -4,17 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>COVID-19 Outbreak SL</title>
+    <title>COVID-19 Outbreak Situation</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./images/download.jpeg"
+    />
     <script
-  type='text/javascript'
-  src='https://www.gstatic.com/charts/loader.js'
-></script>
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script src="script.js"></script>
   </head>
   <body>
     <main id="main">
       <header id="page-header">
-        <h1 id="title">COVID-19 Outbreak Report</h1>
+        <h1 id="title">COVID-19 Outbreak Situation</h1>
+        <h2>
+          Live updates from
+          <u
+            ><a href="https://hpb.health.gov.lk/en" target="_blank"
+              >Health Promotion Bureau of Sri Lanka</a
+            ></u
+          >
+          &#127473;&#127472;
+        </h2>
+        <h3 id="lastUpdate"></h3>
       </header>
       <section id="sl-report">
         <h2>Sri Lanka stats</h2>
@@ -47,8 +63,8 @@
           </div>
           <div class="sl-pa row">
             <div class="column left">
-              Total suspected or confirmed COVID-19 cases currently hospitalized
-              in Sri Lanka
+              Total suspected or confirmed COVID-19 cases <br />currently
+              hospitalized in Sri Lanka
             </div>
             <div
               id="local_total_number_of_individuals_in_hospitals"
@@ -125,10 +141,9 @@
         <div id="charts-pie-global"></div>
       </section>
       <footer id="footer">
-        Made with &#10084;&#65039; by <a href="https://github.com/ThanoshanMV" target="_blank">&copy;ThanoshanMV</a>
+        Made with &#10084;&#65039; by
+        <a href="https://github.com/ThanoshanMV" target="_blank">ThanoshanMV</a>
       </footer>
     </main>
   </body>
-  <script src="script.js"></script>
-  </script>
 </html>
