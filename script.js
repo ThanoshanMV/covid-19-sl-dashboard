@@ -13,7 +13,6 @@ let localTotalCases,
  */
 let globalTotalCases, globalActiveCases, globalDeaths, globalRecovered;
 
-//local,global data. src:HPB
 fetch('https://hpb.health.gov.lk/api/get-current-statistical')
   .then(res => {
     if (res.ok) {
@@ -23,9 +22,6 @@ fetch('https://hpb.health.gov.lk/api/get-current-statistical')
   })
   .then(hpb => {
     const apiData = hpb.data;
-
-    /*document.getElementById('update_date_time').innerHTML =
-      sldata.update_date_time;*/
 
     localTotalCases = apiData.local_total_cases;
     localActiveCases = apiData.local_active_cases;
@@ -61,12 +57,6 @@ fetch('https://hpb.health.gov.lk/api/get-current-statistical')
                </tr>`;
     });
     document.getElementById('table-body').innerHTML = tableRows;
-    /*document.getElementById('table-last-updated').innerHTML =
-      '(Table last updated: ' + lastUpdate + ')';*/
-
-    /* document.getElementById('local_progress').max =
-      sldata.local_total_cases - sldata.local_deaths;
-    document.getElementById('local_progress').value = sldata.local_recovered;*/
 
     globalTotalCases = apiData.global_total_cases;
     globalActiveCases =
@@ -86,10 +76,6 @@ fetch('https://hpb.health.gov.lk/api/get-current-statistical')
 
     document.getElementById('global_recovered').innerHTML =
       apiData.global_recovered;
-
-    /*document.getElementById('global_progress').max =
-      sldata.global_total_cases - sldata.global_deaths;
-    document.getElementById('global_progress').value = sldata.global_recovered;*/
   });
 
 /**
