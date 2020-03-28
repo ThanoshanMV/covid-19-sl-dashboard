@@ -70,7 +70,7 @@
 }
 th,
 td {
-  padding: 5px;
+  padding: 4px;
   text-align: left;
 }
 tr:nth-child(even) {
@@ -135,5 +135,10 @@ a:active {
     width: 50vw;
     padding: 20px;
     margin: 10px;
+  }
+  th,
+  td {
+    padding: 15px;
+    text-align: left;
   }
 }
